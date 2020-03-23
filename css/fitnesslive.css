@@ -42,7 +42,7 @@ html, body {
     display: inline-block;
     height: 60px;
     width: 60px;
-    background-image: url("../img/old_logo.png");
+    background-image: url("../img/logo-512.png");
     background-size: cover;
 }
 
