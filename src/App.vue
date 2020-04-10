@@ -1,32 +1,76 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <PageHeader v-if="$route.meta.noHeader !== true" />
     <router-view/>
   </div>
 </template>
 
+<script>
+import PageHeader from './components/PageHeader.vue';
+
+export default {
+  name: 'App',
+  components: { PageHeader },
+};
+</script>
+
 <style>
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  -webkit-user-select: none;
+  background-color: black;
+}
+
+textarea:focus, select:focus, input:focus, button:focus { outline: none; }
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
-#nav {
-  padding: 30px;
+.brand_holder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    float: left;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.brand_holder h1 {
+    line-height: 60px;
+    font-weight: 700;
+    color: #eee;
+    font-size: 24px;
+    margin-left: 16px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.vertical-line {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: #999;
 }
+
+.brand_holder .vertical-line {
+    margin-left: 16px;
+    height: 35px;
+}
+
+.brand {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('./assets/img/logo-180.png');
+    background-size: cover;
+}
+
 </style>

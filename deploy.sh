@@ -6,11 +6,13 @@ set -e
 # build
 npm run build
 
+read -p "Press enter to continue"
+
 # navigate into the build output directory
 cd dist
 
 # if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
+echo 'live.katescorefitness.co.uk' > CNAME
 
 git init
 git add -A

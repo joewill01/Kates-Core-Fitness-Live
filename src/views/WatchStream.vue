@@ -1,21 +1,15 @@
 <template>
     <div class="hello">
-        <h1>Name: {{user.first_name}} {{user.last_name}}</h1>
+        <h1>Welcome to Watch Stream page</h1>
         <h2>{{msg}}</h2>
     </div>
 </template>
 
 <script>
 export default {
-  mounted() {
-    if (localStorage.getItem('user')) {
-      this.user = JSON.parse(localStorage.getItem('user'));
-    }
-  },
   data() {
     return {
-      msg: 'Home page',
-      user: {},
+      msg: 'where the streams are watched',
     };
   },
 };
